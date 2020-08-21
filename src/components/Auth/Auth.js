@@ -39,7 +39,7 @@ class Auth extends React.Component {
   render() {
     const { authed } = this.state;
 
-    const authBasedComponent = () => {
+    const authButtonComponent = () => {
       if (authed) {
         return (
           <button className="btn btn-danger ml-auto" onClick={this.logoutClickEvent}>Logout</button>
@@ -52,7 +52,7 @@ class Auth extends React.Component {
 
     return (
       <div>
-        { authBasedComponent() }
+        { authButtonComponent() }
       </div>
     );
   }
