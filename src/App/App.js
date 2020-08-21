@@ -4,8 +4,9 @@ import 'firebase/auth';
 
 import './App.scss';
 
-import Navbar from '../components/Navbar/Navbar';
 import fbConnection from '../helpers/data/connection';
+import Navbar from '../components/Navbar/Navbar';
+import Team from '../components/Team/Team';
 
 fbConnection();
 
@@ -29,10 +30,19 @@ class App extends React.Component {
   }
 
   render() {
+
+    const loadComponentIfAuthed = (component) => {
+      if (this.state.isAuthed) {
+        return component;
+      }
+      return null;
+    }
+
     return (
       <div className="App">
         <Navbar isAuthed={this.state.isAuthed} />
-        <h2>INSIDE APP COMPONENT</h2>
+        <h1>Welcome to the Sports Roster!</h1>
+        {loadComponentIfAuthed(<Team />)}
       </div>
     );
   }
