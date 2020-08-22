@@ -50,11 +50,19 @@ class AddPlayerForm extends React.Component {
     .catch((err) => console.error('Could not add player: ', err));
   }
 
+  scrollToEnd = () => {
+    this.end.scrollIntoView({ behavior: "smooth" });
+  }
+
+  componentDidMount() {
+    this.scrollToEnd();
+  }
+
   render() {
     const {formPlayerNameValue, formPlayerPositionValue, formPlayerImageUrlValue} = this.state;
 
     return(
-      <div className="card text-center player-card">
+      <div className="card text-center player-card" ref={(node) => this.end = node}>
         <div className="card-header d-flex flex-nowrap justify-content-center">
           <h5 className="mb-0">New Player Details</h5>
         </div>
