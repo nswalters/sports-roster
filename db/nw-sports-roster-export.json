@@ -1,0 +1,46 @@
+{
+  "players" : {
+    "player01" : {
+      "imageUrl" : "https://nhl.bamcontent.com/images/headshots/current/168x168/8478042.jpg",
+      "name" : "Viktor Arvidsson",
+      "position" : "Right Wing",
+      "uid" : "cAOTBG3T9RMJBNkpTBboYumQzTs2"
+    },
+    "player02" : {
+      "imageUrl" : "https://nhl.bamcontent.com/images/headshots/current/168x168/8475168.jpg",
+      "name" : "Matt Duchene",
+      "position" : "Center",
+      "uid" : "cAOTBG3T9RMJBNkpTBboYumQzTs2"
+    },
+    "player03" : {
+      "imageUrl" : "https://nhl.bamcontent.com/images/headshots/current/168x168/8476887.jpg",
+      "name" : "Filip Forsberg",
+      "position" : "Left Wing",
+      "uid" : "cAOTBG3T9RMJBNkpTBboYumQzTs2"
+    },
+    "player04" : {
+      "imageUrl" : "https://nhl.bamcontent.com/images/headshots/current/168x168/8475218.jpg",
+      "name" : "Mattias Ekholm",
+      "position" : "Defensemen",
+      "uid" : "cAOTBG3T9RMJBNkpTBboYumQzTs2"
+    },
+    "player05" : {
+      "imageUrl" : "https://nhl.bamcontent.com/images/headshots/current/168x168/8475176.jpg",
+      "name" : "Ryan Ellis",
+      "position" : "Defensemen",
+      "uid" : "cAOTBG3T9RMJBNkpTBboYumQzTs2"
+    },
+    "player06" : {
+      "imageUrl" : "https://nhl.bamcontent.com/images/headshots/current/168x168/8471469.jpg",
+      "name" : "Pekka Rinne",
+      "position" : "Goalie",
+      "uid" : "cAOTBG3T9RMJBNkpTBboYumQzTs2"
+    },
+    "player07" : {
+      "imageUrl" : "https://nhl.bamcontent.com/images/headshots/current/168x168/8477930.jpg",
+      "name" : "Pierre-Edouard Bellemare",
+      "position" : "Center",
+      "uid" : "RANDOMSTRINGHERE"
+    }
+  }
+}

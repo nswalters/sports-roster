@@ -41,7 +41,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar isAuthed={this.state.isAuthed} />
-        <h1>Welcome to the Sports Roster!</h1>
         {loadComponentIfAuthed(<Team />)}
       </div>
     );
