@@ -34,7 +34,7 @@ class AddPlayerForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const {updatePlayers} = this.props;
+    const {toggleNewPlayerForm, updatePlayers} = this.props;
     
     let newPlayerObj = {};
     newPlayerObj['imageUrl'] = this.state.formPlayerImageUrlValue;
@@ -45,6 +45,7 @@ class AddPlayerForm extends React.Component {
     playerData.addPlayer(newPlayerObj)
     .then(() => {
       updatePlayers();
+      toggleNewPlayerForm();
     })
     .catch((err) => console.error('Could not add player: ', err));
   }

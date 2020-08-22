@@ -10,8 +10,7 @@ class AddPlayer extends React.Component {
     isNewPlayerFormShowing: false,
   }
 
-  toggleNewPlayerForm = (e) => {
-    e.preventDefault();
+  toggleNewPlayerForm = () => {
     this.setState(prevState => ({ isNewPlayerFormShowing: !prevState.isNewPlayerFormShowing }));
   };
 
@@ -35,7 +34,7 @@ class AddPlayer extends React.Component {
                 </div>
               </div>
             </div>
-          {this.state.isNewPlayerFormShowing ? <AddPlayerForm updatePlayers={updatePlayers}/> : ''}
+          {this.state.isNewPlayerFormShowing ? <AddPlayerForm updatePlayers={updatePlayers} toggleNewPlayerForm={this.toggleNewPlayerForm} /> : ''}
         </div>
       </div>
     );
