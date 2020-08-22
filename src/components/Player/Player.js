@@ -21,7 +21,7 @@ class Player extends React.Component {
     const { player } = this.props;
 
     return (
-      <div className="card text-center shadow player-card">
+      <div className="card text-center player-card">
         <div className="card-header d-flex flex-nowrap justify-content-center">
           <h5 className="ml-auto mb-0">{player.name}</h5>
           <button type="button" onClick={this.deletePlayerEvent} className="close ml-auto text-danger delete-player-button" aria-label="Delete Player" title="Delete Player">&times;</button>
