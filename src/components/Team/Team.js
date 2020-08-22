@@ -36,6 +36,9 @@ class Team extends React.Component {
 
     const playerCards = players.map((player) => <Player key={player.id} player={ player } deletePlayer={this.deletePlayer} />);
 
+    // Push the 'AddPlayer' card onto the array of playerCards
+    playerCards.push(<AddPlayer key={-999} updatePlayers={this.updatePlayers}/>);
+
     return (
       <div>
         <h1 className="font-weight-bold mt-5 mb-3">Meet Your Team</h1>
@@ -47,7 +50,6 @@ class Team extends React.Component {
           <div className="card-columns">
             {playerCards}
           </div>
-          <AddPlayer updatePlayers={this.updatePlayers}/>
         </div>
       </div>
     )
