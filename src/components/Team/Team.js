@@ -47,7 +47,7 @@ class Team extends React.Component {
           <div className="card-columns">
             {playerCards}
           </div>
-          <AddPlayer />
+          <AddPlayer updatePlayers={this.updatePlayers}/>
         </div>
       </div>
     )

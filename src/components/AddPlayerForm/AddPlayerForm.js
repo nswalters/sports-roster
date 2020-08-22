@@ -34,6 +34,7 @@ class AddPlayerForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    const {updatePlayers} = this.props;
     
     let newPlayerObj = {};
     newPlayerObj['imageUrl'] = this.state.formPlayerImageUrlValue;
@@ -41,11 +42,16 @@ class AddPlayerForm extends React.Component {
     newPlayerObj['position'] = this.state.formPlayerPositionValue;
     newPlayerObj['uid'] = authData.getUid();
 
-    playerData.addPlayer(newPlayerObj);
+    playerData.addPlayer(newPlayerObj)
+    .then(() => {
+      updatePlayers();
+    })
+    .catch((err) => console.error('Could not add player: ', err));
   }
 
   render() {
     const {formPlayerNameValue, formPlayerPositionValue, formPlayerImageUrlValue} = this.state;
+
     return(
       <div className="card text-center player-card">
         <div className="card-header d-flex flex-nowrap justify-content-center">

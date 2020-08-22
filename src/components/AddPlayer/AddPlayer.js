@@ -16,6 +16,8 @@ class AddPlayer extends React.Component {
   };
 
   render() {
+    const { updatePlayers } = this.props;
+
     return (
       <div>
         <div className="card-columns">
@@ -33,7 +35,7 @@ class AddPlayer extends React.Component {
                 </div>
               </div>
             </div>
-          {this.state.isNewPlayerFormShowing ? <AddPlayerForm /> : ''}
+          {this.state.isNewPlayerFormShowing ? <AddPlayerForm updatePlayers={updatePlayers}/> : ''}
         </div>
       </div>
     );
