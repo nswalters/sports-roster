@@ -1,5 +1,6 @@
 import React from 'react';
 
+import AddPlayer from '../AddPlayer/AddPlayer';
 import Player from '../Player/Player';
 
 import authData from '../../helpers/data/authData';
@@ -46,6 +47,7 @@ class Team extends React.Component {
           <div className="card-columns">
             {playerCards}
           </div>
+          <AddPlayer updatePlayers={this.updatePlayers}/>
         </div>
       </div>
     )
