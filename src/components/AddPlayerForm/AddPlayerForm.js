@@ -1,5 +1,8 @@
 import React from 'react'
 
+import authData from '../../helpers/data/authData';
+import playerData from '../../helpers/data/playerData';
+
 class AddPlayerForm extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +15,8 @@ class AddPlayerForm extends React.Component {
     this.handleChangePlayerName = this.handleChangePlayerName.bind(this);
     this.handleChangePlayerPosition = this.handleChangePlayerPosition.bind(this);
     this.handleChangePlayerImageUrl = this.handleChangePlayerImageUrl.bind(this);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
@@ -27,6 +32,18 @@ class AddPlayerForm extends React.Component {
     this.setState({formPlayerImageUrlValue: event.target.value});
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    
+    let newPlayerObj = {};
+    newPlayerObj['imageUrl'] = this.state.formPlayerImageUrlValue;
+    newPlayerObj['name'] = this.state.formPlayerNameValue;
+    newPlayerObj['position'] = this.state.formPlayerPositionValue;
+    newPlayerObj['uid'] = authData.getUid();
+
+    playerData.addPlayer(newPlayerObj);
+  }
+
   render() {
     const {formPlayerNameValue, formPlayerPositionValue, formPlayerImageUrlValue} = this.state;
     return(
@@ -34,7 +51,7 @@ class AddPlayerForm extends React.Component {
         <div className="card-header d-flex flex-nowrap justify-content-center">
           <h5 className="mb-0">New Player Details</h5>
         </div>
-        <form className="mx-4 mt-3">
+        <form className="mx-4 mt-3" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <input type="text" className="form-control form-control-sm" value={formPlayerNameValue} onChange={this.handleChangePlayerName}
                    id="playerName" placeholder="Player Name (First Last)" />
@@ -47,7 +64,7 @@ class AddPlayerForm extends React.Component {
             <input type="text" className="form-control form-control-sm" value={formPlayerImageUrlValue} onChange={this.handleChangePlayerImageUrl}
                    id="playerImageUrl" placeholder="Image URL (https:// ...)" />
           </div>
-          <button type="submit" className="btn btn-success disabled mt-1 mb-2" disabled>Submit</button>
+          <button type="submit" className="btn btn-success mt-1 mb-2">Submit</button>
         </form>
       </div>
     );
