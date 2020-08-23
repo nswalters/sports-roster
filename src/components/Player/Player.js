@@ -38,7 +38,7 @@ class Player extends React.Component {
           <button type="button" onClick={this.deletePlayerEvent} className="close ml-auto text-danger delete-player-button" aria-label="Delete Player" title="Delete Player">&times;</button>
         </div>
         {this.state.isEditPlayerFormShowing ? <EditPlayerForm player={player} updatePlayers={this.props.updatePlayers} toggleEditPlayerForm={this.toggleEditPlayerForm} /> : ''}
-        <img className="card-img w-50 shadow rounded-circle mt-3" src={player.imageUrl} alt="Player"></img>
+        <img className="card-img w-50 shadow rounded-circle mt-3 mx-auto" src={player.imageUrl} alt="Player"></img>
         <div className="card-body">
           <p className="card-title">{player.position}</p>
         </div>

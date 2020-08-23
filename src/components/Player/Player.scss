@@ -6,3 +6,23 @@
   height: 1rem;
   text-shadow: 0 1px 0 #fff;
 }
+
+@media screen and (max-width: 991px) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card-columns {
+    column-count: 1;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .navbar .btn {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: x-small;
+  }
+}
