@@ -31,10 +31,18 @@ class Team extends React.Component {
       .catch((err) => console.error('Delete player failed: ', err));
   }
 
+  editPlayer = (playerId, newPlayerObj) => {
+    playerData.updatePlayer(playerId, newPlayerObj)
+      .then(() => {
+        this.updatePlayers();
+      })
+      .catch((err) => console.error('Could not update player: ', err));
+  }
+
   render() {
     const { players } = this.state;
 
-    const playerCards = players.map((player) => <Player key={player.id} player={ player } deletePlayer={this.deletePlayer} />);
+    const playerCards = players.map((player) => <Player key={player.id} player={ player } deletePlayer={this.deletePlayer} editPlayer={this.editPlayer} updatePlayers={this.updatePlayers} />);
 
     // Push the 'AddPlayer' card onto the array of playerCards
     playerCards.push(<AddPlayer key={-999} updatePlayers={this.updatePlayers}/>);
