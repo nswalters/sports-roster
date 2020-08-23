@@ -5,7 +5,7 @@
 This is the first React application using class-based components, full CRUD, and Firebase, that I created while participating in the [Nashville Software School - Full Stack Web Developer Python/Django](http://nashvillesoftwareschool.com).
 
 ## Screenshot
-![screenshot](./Sportsroster.gif)
+![screenshot](./SportsRoster.gif)
 
 
 ## Deployed Project
