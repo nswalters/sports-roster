@@ -17,6 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "deploy": "npm run build && firebase deploy",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
