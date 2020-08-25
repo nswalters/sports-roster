@@ -1,9 +1,11 @@
+@import '../../styles/variables';
+
 .roster-logo {
   height: 4rem;
 }
 
 .myNavbar {
-  background-color: rgb(45, 55, 71);
+  background-color: $lighter-gray;
   padding: 0;
 }
 
