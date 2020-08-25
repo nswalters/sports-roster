@@ -34,7 +34,7 @@ class AddPlayer extends React.Component {
             </div>
           </div>
         </div>
-        {this.state.isNewPlayerFormShowing ? <AddPlayerForm updatePlayers={updatePlayers} toggleNewPlayerForm={this.toggleNewPlayerForm} /> : ''}
+        {this.state.isNewPlayerFormShowing ? <AddPlayerForm updatePlayers={updatePlayers} toggleNewPlayerForm={() => { this.setState({ isNewPlayerFormShowing: !isNewPlayerFormShowing})}} /> : ''}
       </div>
     );
   }

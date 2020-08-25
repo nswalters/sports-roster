@@ -4,35 +4,25 @@ import authData from '../../helpers/data/authData';
 import playerData from '../../helpers/data/playerData';
 
 class AddPlayerForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      formPlayerNameValue: '' ,
-      formPlayerPositionValue: '',
-      formPlayerImageUrlValue: ''
-    }
-
-    this.handleChangePlayerName = this.handleChangePlayerName.bind(this);
-    this.handleChangePlayerPosition = this.handleChangePlayerPosition.bind(this);
-    this.handleChangePlayerImageUrl = this.handleChangePlayerImageUrl.bind(this);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-
+  state = {
+    formPlayerNameValue: '',
+    formPlayerPositionValue: '',
+    formPlayerImageUrlValue: ''
   }
 
-  handleChangePlayerName(event) {
+  handleChangePlayerName = (event) => {
     this.setState({formPlayerNameValue: event.target.value});
   }
 
-  handleChangePlayerPosition(event) {
+  handleChangePlayerPosition = (event) => {
     this.setState({formPlayerPositionValue: event.target.value});
   }
 
-  handleChangePlayerImageUrl(event) {
+  handleChangePlayerImageUrl = (event) => {
     this.setState({formPlayerImageUrlValue: event.target.value});
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     const {toggleNewPlayerForm, updatePlayers} = this.props;
     
