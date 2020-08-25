@@ -14,17 +14,14 @@ class AddPlayer extends React.Component {
     isNewPlayerFormShowing: false,
   }
 
-  toggleNewPlayerForm = () => {
-    this.setState(prevState => ({ isNewPlayerFormShowing: !prevState.isNewPlayerFormShowing }));
-  };
-
   render() {
+    const { isNewPlayerFormShowing } = this.state;
     const { updatePlayers } = this.props;
 
     return (
       <div>
         <div className="card add-player-card">
-          <div className="text-center" onClick={this.toggleNewPlayerForm}>
+          <div className="text-center" onClick={() => { this.setState({ isNewPlayerFormShowing: !isNewPlayerFormShowing})}}>
             <div className="card-header d-flex flex-nowrap justify-content-center">
               <h5 className="mx-auto mb-0">Add Player</h5>
             </div>
