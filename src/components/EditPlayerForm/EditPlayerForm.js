@@ -9,43 +9,31 @@ import playerData from '../../helpers/data/playerData';
 import './EditPlayerForm.scss';
 
 class AddPlayerForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      formPlayerNameValue: this.props.player.name ,
-      formPlayerPositionValue: this.props.player.position,
-      formPlayerImageUrlValue: this.props.player.imageUrl 
-    }
-
-    this.handleChangePlayerName = this.handleChangePlayerName.bind(this);
-    this.handleChangePlayerPosition = this.handleChangePlayerPosition.bind(this);
-    this.handleChangePlayerImageUrl = this.handleChangePlayerImageUrl.bind(this);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-
-  }
-
-  // player={player} updatePlayers={this.props.updatePlayers} toggleEditPlayerForm={this.toggleEditPlayerForm}
-
   static propTypes = {
     player: playerShape.playerShape,
     updatePlayers: PropTypes.func.isRequired,
     toggleEditPlayerForm: PropTypes.func.isRequired
   }
 
-  handleChangePlayerName(event) {
+  state = {
+    formPlayerNameValue: this.props.player.name,
+    formPlayerPositionValue: this.props.player.position,
+    formPlayerImageUrlValue: this.props.player.imageUrl
+  }
+
+  handleChangePlayerName = (event) => {
     this.setState({formPlayerNameValue: event.target.value});
   }
 
-  handleChangePlayerPosition(event) {
+  handleChangePlayerPosition = (event) => {
     this.setState({formPlayerPositionValue: event.target.value});
   }
 
-  handleChangePlayerImageUrl(event) {
+  handleChangePlayerImageUrl = (event) => {
     this.setState({formPlayerImageUrlValue: event.target.value});
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     const { toggleEditPlayerForm, updatePlayers } = this.props;
     
