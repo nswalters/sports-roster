@@ -1,5 +1,7 @@
+@import '../../styles/variables';
+
 .player-card {
-  background-color: rgb(45, 55, 71);
+  background-color: $lighter-gray;
 }
 
 .edit-player-button {
