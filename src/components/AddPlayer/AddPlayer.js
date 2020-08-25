@@ -1,10 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import AddPlayerForm from '../AddPlayerForm/AddPlayerForm';
 
 import './AddPlayer.scss';
 
 class AddPlayer extends React.Component {
+  static propTypes = {
+    updatePlayers: PropTypes.func.isRequired
+  }
+
   state = {
     isNewPlayerFormShowing: false,
   }

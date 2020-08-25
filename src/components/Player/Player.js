@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import playerShape from '../../helpers/propTypes/playerShape';
 
 import EditPlayerForm from '../EditPlayerForm/EditPlayerForm';
+import playerData from '../../helpers/data/playerData';
 
 import './Player.scss';
 
 class Player extends React.Component {
   static propTypes = {
     player: playerShape.playerShape,
-    deletePlayer: PropTypes.func.isRequired
+    updatePlayers: PropTypes.func.isRequired
   }
 
   state = {
@@ -21,10 +22,26 @@ class Player extends React.Component {
     this.setState(prevState => ({ isEditPlayerFormShowing: !prevState.isEditPlayerFormShowing }));
   };
 
+  deletePlayer = (playerId, updatePlayers=this.props.updatePlayers) => {
+    playerData.deletePlayer(playerId)
+      .then(() => {
+        updatePlayers();
+      })
+      .catch((err) => console.error('Delete player failed: ', err));
+  }
+
+  editPlayer = (playerId, newPlayerObj, updatePlayers=this.props.updatePlayers) => {
+    playerData.updatePlayer(playerId, newPlayerObj)
+      .then(() => {
+        updatePlayers();
+      })
+      .catch((err) => console.error('Could not update player: ', err));
+  }
+
   deletePlayerEvent = (e) => {
     e.preventDefault();
-    const { player, deletePlayer } = this.props;
-    deletePlayer(player.id);
+    const { player } = this.props;
+    this.deletePlayer(player.id);
   }
 
   render() {
