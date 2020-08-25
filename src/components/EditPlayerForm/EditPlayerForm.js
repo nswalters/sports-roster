@@ -1,4 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types';
+
+import playerShape from '../../helpers/propTypes/playerShape';
 
 import authData from '../../helpers/data/authData';
 import playerData from '../../helpers/data/playerData';
@@ -20,6 +23,14 @@ class AddPlayerForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
+  }
+
+  // player={player} updatePlayers={this.props.updatePlayers} toggleEditPlayerForm={this.toggleEditPlayerForm}
+
+  static propTypes = {
+    player: playerShape.playerShape,
+    updatePlayers: PropTypes.func.isRequired,
+    toggleEditPlayerForm: PropTypes.func.isRequired
   }
 
   handleChangePlayerName(event) {
