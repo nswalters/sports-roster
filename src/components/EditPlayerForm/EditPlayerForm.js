@@ -8,7 +8,7 @@ import playerData from '../../helpers/data/playerData';
 
 import './EditPlayerForm.scss';
 
-class AddPlayerForm extends React.Component {
+class EditPlayerForm extends React.Component {
   static propTypes = {
     player: playerShape.playerShape,
     updatePlayers: PropTypes.func.isRequired,
@@ -81,4 +81,4 @@ class AddPlayerForm extends React.Component {
   }
 }
 
-export default AddPlayerForm;
+export default EditPlayerForm;
